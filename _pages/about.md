@@ -4,10 +4,8 @@ title: About Me
 permalink: /about/
 ---
 
-This is where you put the contents of your *About* page. Like all your pages, it's in [Markdown](https://guides.github.com/features/mastering-markdown/) format.
+![alt text](https://github.com/Stopwolf/blog/blob/master/images/herceg_novi.jpg "Pic of me in Herceg Novi")
 
-This website is powered by **[fastpages](https://github.com/fastai/fastpages)** [^1].
-
-
-
-[^1]:a blogging platform that natively supports Jupyter notebooks in addition to other formats.
+I'm a third year student studying Information Systems and Technology in Belgrade, Serbia.
+When I'm not studying for my exams, I'm working part-time for [Saga NFG] (https://saga.rs/?lang=en) as ML Engineer, creating ML-based solutions for one of the biggest banks in this part of Europe.
+In my actual free time I like to play basketball, meditate, workout, read and learn new stuff.
