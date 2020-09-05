@@ -60,6 +60,15 @@
   
 
   
+      ,"page2": {
+          "title": "",
+          "content": "Welcome to my humble blog, where I post about machine learning topics I recently learned about! I made this mainly to fuel my will to learn and share new things with the world. . Next topics I’m currently working on are: . Concolutional Neural Networks that’ll be able to say “I don’t know” | Predicting next-game stats of NBA players (LeBron James to be exact) | How to deploy machine learning models | . Note that these ideas change all the time and that they might not make it to blog post form.. . If you’re interested in hot this site is built, the answer is with fastpages! fastpages automates the process of creating blog posts via GitHub Actions, so you don’t have to fuss with conversion scripts. The best part is that you can directly post your Jupyter Notebooks as blog posts! . A full list of features can be found on GitHub. . Posts .",
+          "url": "https://stopwolf.github.io/blog/",
+          "relUrl": "/",
+          "date": ""
+      }
+      
+  
 
   
   
