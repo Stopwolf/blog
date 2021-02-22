@@ -2,7 +2,7 @@
 title: "Our Privacy Opportunity: Notes"
 description: "Why are information flows important in today's society? And what can we do to make them better?"
 layout: post
-toc: false
+toc: true
 comments: true
 image: images/post_front_images/information_flow.jpg
 hide: false
@@ -11,7 +11,8 @@ categories: [privacy, openmined, notes]
 ---
 
 Our Privacy Opportunity is the first course in the [Private AI course series](courses.openmined.org) by OpenMined. It's also a non-technical course so anyone can just jump in and learn new things. These notes are a short compilation of important concepts presented throughout the course. Nonetheless, I recommend you go through the entire course yourself since it's filled with rich examples.
-{% include info.html text="If you want to read much more detailed notes, other members of the community Nahua Kang ([his blog](nahua.dev)) and Johannes Stutz ([his blog](deeplearning.berlin)) did the course justice with their notes." %} 
+
+> Note: If you want to read much more detailed notes, other members of the community Nahua Kang ([his blog](nahua.dev)) and Johannes Stutz ([his blog](deeplearning.berlin)) did the course justice with their notes. 
 
 ![]({{ site.baseurl }}/images/post_front_images/information_flow.jpg "Photo by Anton Maksimov juvnsky on Unsplash")
 # Information Flows 🌊
