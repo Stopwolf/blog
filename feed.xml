@@ -1,4 +1,177 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://stopwolf.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stopwolf.github.io/blog/" rel="alternate" type="text/html" /><updated>2021-02-22T01:47:43-06:00</updated><id>https://stopwolf.github.io/blog/feed.xml</id><title type="html">Stopwolf’s Blog</title><subtitle>Platform I use to share things I learned. Mostly Machine Learning, Data Science etc.</subtitle><entry><title type="html">Recreating Cyclical Learning Rates</title><link href="https://stopwolf.github.io/blog/optimization/paper/2020/08/28/clr.html" rel="alternate" type="text/html" title="Recreating Cyclical Learning Rates" /><published>2020-08-28T00:00:00-05:00</published><updated>2020-08-28T00:00:00-05:00</updated><id>https://stopwolf.github.io/blog/optimization/paper/2020/08/28/clr</id><content type="html" xml:base="https://stopwolf.github.io/blog/optimization/paper/2020/08/28/clr.html">&lt;!--
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://stopwolf.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stopwolf.github.io/blog/" rel="alternate" type="text/html" /><updated>2021-02-22T02:01:18-06:00</updated><id>https://stopwolf.github.io/blog/feed.xml</id><title type="html">Stopwolf’s Blog</title><subtitle>Platform I use to share things I learned. Mostly Machine Learning, Data Science etc.</subtitle><entry><title type="html">Our Privacy Opportunity: Notes</title><link href="https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes.html" rel="alternate" type="text/html" title="Our Privacy Opportunity: Notes" /><published>2021-02-22T00:00:00-06:00</published><updated>2021-02-22T00:00:00-06:00</updated><id>https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes</id><content type="html" xml:base="https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes.html">&lt;p&gt;Our Privacy Opportunity is the first course in the &lt;a href=&quot;courses.openmined.org&quot;&gt;Private AI course series&lt;/a&gt; by OpenMined. It’s also a non-technical course so anyone can just jump in and learn new things. These notes are a short compilation of important concepts presented throughout the course. Nonetheless, I recommend you go through the entire course yourself since it’s filled with rich examples.&lt;/p&gt;
+&lt;div class=&quot;Toast&quot;&gt;
+   &lt;span class=&quot;Toast-icon&quot;&gt;&lt;svg class=&quot;octicon octicon-info octicon octicon-info&quot; viewBox=&quot;0 0 14 16&quot; version=&quot;1.1&quot; width=&quot;14&quot; height=&quot;16&quot; aria-hidden=&quot;true&quot;&gt;&lt;path fill-rule=&quot;evenodd&quot; d=&quot;M6.3 5.69a.942.942 0 01-.28-.7c0-.28.09-.52.28-.7.19-.18.42-.28.7-.28.28 0 .52.09.7.28.18.19.28.42.28.7 0 .28-.09.52-.28.7a1 1 0 01-.7.3c-.28 0-.52-.11-.7-.3zM8 7.99c-.02-.25-.11-.48-.31-.69-.2-.19-.42-.3-.69-.31H6c-.27.02-.48.13-.69.31-.2.2-.3.44-.31.69h1v3c.02.27.11.5.31.69.2.2.42.31.69.31h1c.27 0 .48-.11.69-.31.2-.19.3-.42.31-.69H8V7.98v.01zM7 2.3c-3.14 0-5.7 2.54-5.7 5.68 0 3.14 2.56 5.7 5.7 5.7s5.7-2.55 5.7-5.7c0-3.15-2.56-5.69-5.7-5.69v.01zM7 .98c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.12-7-7 3.14-7 7-7z&quot;&gt;&lt;/path&gt;&lt;/svg&gt;&lt;/span&gt;
+   &lt;span class=&quot;Toast-content&quot;&gt;If you want to read much more detailed notes, other members of the community Nahua Kang ([his blog](nahua.dev)) and Johannes Stutz ([his blog](deeplearning.berlin)) did the course justice with their notes.&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/images/post_front_images/information_flow.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Anton Maksimov juvnsky on Unsplash&quot; /&gt;&lt;/p&gt;
+&lt;h1 id=&quot;information-flows-&quot;&gt;Information Flows 🌊&lt;/h1&gt;
+
+&lt;p&gt;&lt;strong&gt;Information Flow&lt;/strong&gt; (IF) is a flow of bits from a sender to a receiver with some &lt;em&gt;probability&lt;/em&gt;. The sender and the receiver could be either:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;an exact individual&lt;/li&gt;
+  &lt;li&gt;anonymous individual&lt;/li&gt;
+  &lt;li&gt;anonymous member of a group&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The accent of the definition is on the probability. We don’t want &lt;em&gt;anyone&lt;/em&gt; but the receiver to read the message we sent, but sometimes scenarios like this happen.&lt;/p&gt;
+
+&lt;p&gt;IFs which are faulty like this, can be divided into:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Leaky IFs - Information Flows that reveal more information than was intended,&lt;/li&gt;
+  &lt;li&gt;Insufficient IFs - Information Flows that fail to fully convey the information or persuade the recipient of some piece of information&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Now that we learned about Information Flows, let’s try to define privacy in the context of Information Flows. Of course, there’s no one &lt;em&gt;perfect&lt;/em&gt; definition of privacy. But definition we’ll use here is the following:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Privacy is the ability to ensure flows of information that satisfy social norms.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This not only puts the main focus on the flows of information (instead of information itself), but it also includes social norms which can play a huge role in privacy.&lt;/p&gt;
+
+&lt;p&gt;The trick is that we want privacy to protect our data, but we also want better flows of information. We want to learn to detect cancer before it’s too late but we don’t want to reveal our medical data just like that.. We might want to have our DNA analyzed to learn about our ancestry, but we don’t want to reveal our exact DNA to anyone..&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Contextual Integrity&lt;/strong&gt; tackles this problem. It tries to define exactly &lt;em&gt;when&lt;/em&gt; people in society feel their privacy is violated.&lt;/p&gt;
+
+&lt;h1 id=&quot;data-is-fire-&quot;&gt;Data is fire 🔥&lt;/h1&gt;
+
+&lt;p&gt;I personally never thought of this metaphor, but it makes sense. Fire was used as a “tool” to make humans prosper, to solve problems, but on the other hand, if it goes unchecked, it can cause massive damage.&lt;/p&gt;
+
+&lt;p&gt;The same goes for data. We can use data to solve important problems the society faces. Climate change, misinformation, better education, medicine, general health can all be improved with the right data. But more often than not, this data is private. We can’t just use it when we want, how we want just because it’s for a noble goal. This would cause massive damage to the people whose data we would end up using.&lt;/p&gt;
+
+&lt;p&gt;Of course, one might think simple data anonymization could be used to avoid privacy problems. That’s not true anymore. The most famous case of data anonymization &lt;strong&gt;not&lt;/strong&gt; working was also one of the most famous failed data science competitions - the Netflix Prize competition. They changed user IDs and movie names with random numbers to avoid revealing private information. Unfortunately, IMDb exists. By connecting people’s reviews of movies on the IMDb site and available, anonymized data from the competition, researchers have managed to reveal the private information of more than half of the users present in the dataset!&lt;/p&gt;
+
+&lt;p&gt;Even if anonymized data can’t be linked to one single person, it can still reveal personal, sensitive data. A perfect example of this is Strava revealing its users’ running routes, which ended up revealing the location of a US military base!&lt;/p&gt;
+
+&lt;h1 id=&quot;dilemma-or-two-&quot;&gt;Dilemma or two 🤔&lt;/h1&gt;
+
+&lt;p&gt;Two of the main dilemmas linked to the previously mentioned problems are &lt;strong&gt;privacy&lt;/strong&gt; and &lt;strong&gt;transparency dilemmas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Privacy dilemma&lt;/strong&gt; is focused on deciding whether undesirable information should be leaked in order to achieve a greater good. We want to cure cancer, but nobody wants to reveal his or her medical data. We want to use electrical energy more efficiently, but we don’t want to share data that might reveal when we are and aren’t at home.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Transparency dilemma&lt;/strong&gt; is focused on when to hide data. This affects subsequent decision making because now, one must make decisions without considering available data, or by considering non-verified data. Imagine having to choose which COVID-19 vaccine to take, but you don’t know if any of the vaccines are working, or even if and which symptoms they cause. All because data about these things remain hidden.&lt;/p&gt;
+
+&lt;p&gt;The real-world case is that more privacy leads to a loss of transparency and vice versa. This is called a &lt;strong&gt;Pareto trade-off&lt;/strong&gt; between privacy and transparency.&lt;/p&gt;
+
+&lt;p&gt;Despite that, the Pareto trade-off can be &lt;em&gt;moved&lt;/em&gt;. We can simultaneously achieve more of both at the same time! And this is the main point of this course - learning how to move the Pareto trade-off.&lt;/p&gt;
+
+&lt;p&gt;GDPR (General Data Protection Regulation) is one example of this. It gives all the power to the owner of the data. You can see which data (about you) a company possesses, and you can then order them to delete your data!&lt;/p&gt;
+
+&lt;p&gt;Another example lives in Taiwan. Their approach to climate change, democracy, and misinformation is a community-driven approach. As a result, they were able to connect about 11 million (out of 24 million) people in the country to solve some of their most important problems, while achieving both transparency &lt;em&gt;and&lt;/em&gt; privacy.&lt;/p&gt;
+
+&lt;h1 id=&quot;limitations-&quot;&gt;Limitations 📉&lt;/h1&gt;
+
+&lt;p&gt;There are three main problems we face in information flows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Copy Problem :busts_in_silhouette:&lt;/li&gt;
+  &lt;li&gt;Bundling Problem :package:&lt;/li&gt;
+  &lt;li&gt;Recursive Oversight/Enforcement Problem :arrows_counterclockwise:&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;The Copy Problem&lt;/strong&gt; is about, you guessed it.. copying information! If I share some information with you, I can’t control how you’ll use it later. So if I shared some &lt;em&gt;sensitive&lt;/em&gt; information with you, there’s no way in me knowing, much less controlling how you use and share that data.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Bundling Problem&lt;/strong&gt; concerns itself about sharing more information than is needed. For example, if a bartender wanted to verify you were above 18, you’d show him your ID. But when that happens, he can now also see your exact birth date or even your full address. And all he needed was information on whether you’re above 18 or not.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Recursive Oversight Problem&lt;/strong&gt; states that if you put some sensitive data into somebody’s computer, who will make sure that that person doesn’t misuse the data. But also who’s going to make sure that that overseeing body/institution/person isn’t going to misuse it too. This can go on and on. There’s always one step above we could go, which is why this problem is &lt;em&gt;recursive&lt;/em&gt; in nature.&lt;/p&gt;
+
+&lt;p&gt;These problems might seem too hard to solve, but there is a framework for creating IFs that prevent these problems from happening. That framework’s name is &lt;strong&gt;Structured Transparency&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;structured-transparency-&quot;&gt;Structured Transparency 📈&lt;/h1&gt;
+
+&lt;p&gt;Since the main goal is to enable desired uses of IFs without enabling misuse, folks at OpenMined came up with Structured Transparency. The formal definition states that:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Structured Transparency is about enabling precise social or technical arrangements that determine &lt;em&gt;who&lt;/em&gt; can see &lt;em&gt;what&lt;/em&gt;, &lt;em&gt;when,&lt;/em&gt; and &lt;em&gt;how.&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;In order to explain Structured Transparency, we’ll go through each of its five components. These include:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Input Privacy&lt;/li&gt;
+  &lt;li&gt;Output Privacy&lt;/li&gt;
+  &lt;li&gt;Input Verification&lt;/li&gt;
+  &lt;li&gt;Output Verification&lt;/li&gt;
+  &lt;li&gt;Flow Governance&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;input-privacy-️&quot;&gt;Input Privacy ➡️🔳🚫&lt;/h2&gt;
+
+&lt;p&gt;Input Privacy is “a guarantee that one or more people can participate in computation, in such a way that neither party learns anything about the other party’s inputs to the computation, intermediate variables of the computation, or outputs, other than the outputs that were designed specifically to them”.&lt;/p&gt;
+
+&lt;p&gt;In other words, you and I can participate in some IF and learn nothing about each other’s inputs. Think of voting, we can both participate and still learn nothing about who the other person voted for (unless we tell them, but that has nothing to do with input privacy).&lt;/p&gt;
+
+&lt;p&gt;Input Privacy prevents the Copy Problem from happening since you can’t create a copy of the information you can’t see!&lt;/p&gt;
+
+&lt;p&gt;Some technical solutions of input privacy include:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Public Key Encryption&lt;/strong&gt; (PKE) - every user has his public and private key. By using the public key, we can encrypt information, send it, and then only the user with the corresponding private key can see the information.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Homomorphic Encryption&lt;/strong&gt; (HE) - we can perform computations on already encrypted data, without having to decrypt it! Imagine sending your medical data to some machine learning model knowing that it (or anyone other that might spy on the IF) will never learn anything about your data.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Secure Multi-Party Computation&lt;/strong&gt; (SMPC) - any algorithm in which multiple people can calculate the output of a function while keeping their inputs secret from each other. &lt;strong&gt;Additive Secret Sharing&lt;/strong&gt; is one example of SMPC. It allows multiple people to share &lt;em&gt;ownership&lt;/em&gt; of a number. As a result, in order to decrypt that one number, a 100% agreement is needed between all the shareholders.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;output-privacy-️&quot;&gt;Output Privacy 🔳➡️🚫&lt;/h2&gt;
+
+&lt;p&gt;Output Privacy “allows you to receive or read the output of any IF without being able to infer further information about the input. Symmetrically, it allows you to contribute to the input of an IF without worrying that the later output could be reverse engineered to learn your input”.&lt;/p&gt;
+
+&lt;p&gt;In other words, Output Privacy is there to prevent someone from learning your input, based on your output. And by doing so, we prevent the Bundling Problem from happening! This is shown on the image below:&lt;/p&gt;
+
+&lt;p&gt;One technical solution to Output Privacy is called &lt;strong&gt;Differential Privacy&lt;/strong&gt;. DP provides output privacy for aggregate statistics over a large group of people. DP introduces two new terms $\epsilon$ (epsilon) and privacy budgets.&lt;/p&gt;
+
+&lt;p&gt;$\epsilon$ is a formal upper bound on the probability that unwanted things could happen to you if you decided to participate in a statistical study. Or more formally: no matter what the event is, the probability that the event will happen when you participate in the study will be no greater than $e^{\epsilon}$ times the current probability of the event.&lt;/p&gt;
+
+&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;∣&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;mo&gt;≤&lt;/mo&gt;&lt;msup&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;ϵ&lt;/mi&gt;&lt;/msup&gt;&lt;mi&gt;P&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;(&lt;/mo&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;v&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi mathvariant=&quot;normal&quot;&gt;∣&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;y&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;mi&gt;u&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;d&lt;/mi&gt;&lt;mi&gt;o&lt;/mi&gt;&lt;msup&gt;&lt;mi&gt;n&lt;/mi&gt;&lt;mo mathvariant=&quot;normal&quot; lspace=&quot;0em&quot; rspace=&quot;0em&quot;&gt;′&lt;/mo&gt;&lt;/msup&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mtext&gt; &lt;/mtext&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;r&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;c&lt;/mi&gt;&lt;mi&gt;i&lt;/mi&gt;&lt;mi&gt;p&lt;/mi&gt;&lt;mi&gt;a&lt;/mi&gt;&lt;mi&gt;t&lt;/mi&gt;&lt;mi&gt;e&lt;/mi&gt;&lt;mo stretchy=&quot;false&quot;&gt;)&lt;/mo&gt;&lt;/mrow&gt;&lt;annotation encoding=&quot;application/x-tex&quot;&gt;P(event|\ you\ participate) \le e^{\epsilon}P(event|\ you \ don&amp;#x27;t\ participate)&lt;/annotation&gt;&lt;/semantics&gt;&lt;/math&gt;&lt;/span&gt;&lt;span class=&quot;katex-html&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.13889em;&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;∣&lt;/span&gt;&lt;span class=&quot;mspace&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mspace&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mrel&quot;&gt;≤&lt;/span&gt;&lt;span class=&quot;mspace&quot; style=&quot;margin-right:0.2777777777777778em;&quot;&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;base&quot;&gt;&lt;span class=&quot;strut&quot; style=&quot;height:1.051892em;vertical-align:-0.25em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.7143919999999999em;&quot;&gt;&lt;span style=&quot;top:-3.113em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mathdefault mtight&quot;&gt;ϵ&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.13889em;&quot;&gt;P&lt;/span&gt;&lt;span class=&quot;mopen&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;∣&lt;/span&gt;&lt;span class=&quot;mspace&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.03588em;&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;u&lt;/span&gt;&lt;span class=&quot;mspace&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;o&lt;/span&gt;&lt;span class=&quot;mord&quot;&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;msupsub&quot;&gt;&lt;span class=&quot;vlist-t&quot;&gt;&lt;span class=&quot;vlist-r&quot;&gt;&lt;span class=&quot;vlist&quot; style=&quot;height:0.801892em;&quot;&gt;&lt;span style=&quot;top:-3.113em;margin-right:0.05em;&quot;&gt;&lt;span class=&quot;pstrut&quot; style=&quot;height:2.7em;&quot;&gt;&lt;/span&gt;&lt;span class=&quot;sizing reset-size6 size3 mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;&lt;span class=&quot;mord mtight&quot;&gt;′&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mspace&quot;&gt; &lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot; style=&quot;margin-right:0.02778em;&quot;&gt;r&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;i&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;t&lt;/span&gt;&lt;span class=&quot;mord mathdefault&quot;&gt;e&lt;/span&gt;&lt;span class=&quot;mclose&quot;&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;
+
+&lt;p&gt;&lt;strong&gt;Privacy Budget&lt;/strong&gt; is a measure of leakage a data owner gives to an outside researcher looking to study their data. This budget is given in form of $n\epsilon$, where n is some natural number. Privacy Budget can be local when each researcher gets their own $\epsilon$, and global when all researchers get some amount of $\epsilon$ and have to share it.&lt;/p&gt;
+
+&lt;h2 id=&quot;input-verification-️&quot;&gt;Input Verification ➡️🔳✅&lt;/h2&gt;
+
+&lt;p&gt;Input verification “allows you to verify that information you receive from an IF is sourced from entities you trust. Symmetrically, it allows you to send information such that output can be verifiably associated to you”.&lt;/p&gt;
+
+&lt;p&gt;Originally, we as humans use something called &lt;strong&gt;Internal Consistency&lt;/strong&gt; for this - for detecting fakes. Although, this has two issues:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;can be faked and not recognized as fake, and&lt;/li&gt;
+  &lt;li&gt;needs more information than necessary (the Bundling Problem)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;One solution would be to use &lt;strong&gt;cryptographic signatures&lt;/strong&gt;, which may sound fancy but is repeating one of the solutions of Input Privacy - Public Key Encryption. The difference is that now, you first use your private key to “sign” a document you send so that the recipient can use your public key to verify you as the true sender. This is also called a &lt;strong&gt;certificate&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;strong&gt;hashes&lt;/strong&gt; is another possible solution. A Hash is one huge number that represents a document. Hashing works because any two exactly the same documents have to have the same exact hash. If the hash changed in the IF, we know that someone tampered with it and that we can’t trust it.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;But&lt;/strong&gt;, this is also a problem for us. We want to perform computations on the data going into the IF, but if we do that the hash will change..&lt;/p&gt;
+
+&lt;p&gt;Other solutions for Input Verification are &lt;strong&gt;Zero-Knowledge Proofs&lt;/strong&gt; and &lt;strong&gt;Active Security&lt;/strong&gt;. Since these solutions are highly technical, they were out of the scope of this course.&lt;/p&gt;
+
+&lt;h2 id=&quot;output-verification-️&quot;&gt;Output Verification 🔳➡️✅&lt;/h2&gt;
+
+&lt;p&gt;Output Verification “allows you to verify attributes of any information processing or computations within an IF”. Imagine we had some IF that was using a privacy-preserving machine learning model. For example, we try to predict if a person has cancer without learning anything about the person. We need to verify that our model is doing its job well. Besides that, the person whose data we’re analyzing needs to be persuaded that the model they’re using is not biased, works well and that they are using the right model in the first place. By using Output Verification, we can evaluate the model, in any way we need to, without having to reveal the model if it has to stay secret.&lt;/p&gt;
+
+&lt;h2 id=&quot;flow-governance-️️&quot;&gt;Flow Governance ➡️🔳➡️👀&lt;/h2&gt;
+
+&lt;p&gt;Flow Governance tries to solve the Recursive Oversight Problem by defining who governs the IF, how, and who can and can’t make decisions based on that IF. Two extremes of Flow Governance are &lt;strong&gt;unilateral&lt;/strong&gt; and &lt;strong&gt;consensus governance&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;An example of &lt;strong&gt;Unilateral Governance&lt;/strong&gt; is when we use PKE’s exclusively. In this case, only the owner of the private key has the “power” to act on the information from IF, since only they can see the encrypted data. In other words, only one person has the ability to define, change and modify IF as they see fit.&lt;/p&gt;
+
+&lt;p&gt;The other extreme is called &lt;strong&gt;Consensus Governance&lt;/strong&gt;. Secure Multi-Party Computation is one example of this. By utilizing SMPC, we can have multiple shareholders which decide what happens inside IFs, what data can be changed, which shareholders removed, but only if all shareholders agree. 100% agreement is needed for every decision!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The Threshold Scheme&lt;/strong&gt; is an example in between these two extremes. It’s more similar to Consensus Governance with a slight modification of having a decision threshold. Instead of 100% agreement, we’d need for example 75% agreement before some decision is made.&lt;/p&gt;
+
+&lt;h1 id=&quot;impact-of-structured-transparency-&quot;&gt;Impact of Structured Transparency 💥&lt;/h1&gt;
+
+&lt;p&gt;One huge benefit of Structured Transparency is that it can be used by almost any industry and still improve current Information Flows. Examples here are countless: both academic and company research, machine learning start-ups, hospitals, even coming up with laws and regulations. Only imagination and creativity limit us!&lt;/p&gt;
+
+&lt;p&gt;One clear example set here is hospitals. The massively unutilized leverage that hospitals have is heaps of medical data. This data can be used to train a wide range of different ML models which could in return improve our healthcare. A risk that prevents hospitals from doing so right now, is mostly fear of leaking incredibly private data. &lt;strong&gt;But&lt;/strong&gt;, instead of &lt;em&gt;sharing data&lt;/em&gt;, hospitals can, by using Structured Transparency, &lt;em&gt;sell opportunities&lt;/em&gt; for researchers, data scientists, statisticians to work on their data, to train ML models without even seeing the data!&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion-muscle&quot;&gt;Conclusion :muscle:&lt;/h1&gt;
+
+&lt;p&gt;I personally learned a lot of new things in this short course. I now look at the world with a new pair of eyes, always thinking about information flows and how they could be improved. If you find things like privacy, machine learning, social good, I highly recommend this course to you. It’s also free so why not?&lt;/p&gt;
+
+&lt;p&gt;P.S. After watching through the whole course, the only task left is to come up with a new product or a service that uses privacy-enhancing technology. I came up with a possible solution to lower misinformation spread, and I called it f0rum. If you’re interested you can read more &lt;a href=&quot;https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum.html&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">Our Privacy Opportunity is the first course in the Private AI course series by OpenMined. It’s also a non-technical course so anyone can just jump in and learn new things. These notes are a short compilation of important concepts presented throughout the course. Nonetheless, I recommend you go through the entire course yourself since it’s filled with rich examples. If you want to read much more detailed notes, other members of the community Nahua Kang ([his blog](nahua.dev)) and Johannes Stutz ([his blog](deeplearning.berlin)) did the course justice with their notes.</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stopwolf.github.io/blog/images/post_front_images/information_flow.jpg" /><media:content medium="image" url="https://stopwolf.github.io/blog/images/post_front_images/information_flow.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Recreating Cyclical Learning Rates</title><link href="https://stopwolf.github.io/blog/optimization/paper/2020/08/28/clr.html" rel="alternate" type="text/html" title="Recreating Cyclical Learning Rates" /><published>2020-08-28T00:00:00-05:00</published><updated>2020-08-28T00:00:00-05:00</updated><id>https://stopwolf.github.io/blog/optimization/paper/2020/08/28/clr</id><content type="html" xml:base="https://stopwolf.github.io/blog/optimization/paper/2020/08/28/clr.html">&lt;!--
 #################################################
 ### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
 #################################################
