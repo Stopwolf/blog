@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://stopwolf.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stopwolf.github.io/blog/" rel="alternate" type="text/html" /><updated>2021-02-23T05:00:55-06:00</updated><id>https://stopwolf.github.io/blog/feed.xml</id><title type="html">Stopwolf’s Blog</title><subtitle>Platform I use to share things I learned. Mostly Machine Learning, Data Science etc.</subtitle><entry><title type="html">f0rum: Community-driven Article Validation</title><link href="https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum.html" rel="alternate" type="text/html" title="f0rum: Community-driven Article Validation" /><published>2021-02-23T00:00:00-06:00</published><updated>2021-02-23T00:00:00-06:00</updated><id>https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum</id><content type="html" xml:base="https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum.html">&lt;h1 id=&quot;problem-statement-&quot;&gt;Problem Statement 📝&lt;/h1&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://stopwolf.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stopwolf.github.io/blog/" rel="alternate" type="text/html" /><updated>2021-02-23T05:04:00-06:00</updated><id>https://stopwolf.github.io/blog/feed.xml</id><title type="html">Stopwolf’s Blog</title><subtitle>Platform I use to share things I learned. Mostly Machine Learning, Data Science etc.</subtitle><entry><title type="html">f0rum: Community-driven Article Validation</title><link href="https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum.html" rel="alternate" type="text/html" title="f0rum: Community-driven Article Validation" /><published>2021-02-23T00:00:00-06:00</published><updated>2021-02-23T00:00:00-06:00</updated><id>https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum</id><content type="html" xml:base="https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum.html">&lt;h1 id=&quot;problem-statement-&quot;&gt;Problem Statement 📝&lt;/h1&gt;
 
 &lt;p&gt;As the usage of the internet grows, so does the opportunity to share and access new information. This can be beneficial in many ways: you can learn new topics from experts, learn about happenings from around the whole world, how to solve problems that you thought were specific to your use case. Internet became a vast trove of all kinds of human knowledge and experiences.&lt;/p&gt;
 
 &lt;p&gt;On the other hand, along with the growth of internet usage, also grows the opportunity to share &lt;em&gt;false&lt;/em&gt; information, and to a potentially massive audience. If left unchecked, these flows of misinformation can damage individuals, but also the &lt;a href=&quot;[https://guides.lib.umich.edu/c.php?g=637508&amp;amp;p=4472297](https://guides.lib.umich.edu/c.php?g=637508&amp;amp;p=4472297)&quot;&gt;whole society&lt;/a&gt;. It’s known that &lt;a href=&quot;[https://science.sciencemag.org/CONTENT/359/6380/1146.abstract](https://science.sciencemag.org/CONTENT/359/6380/1146.abstract)&quot;&gt;misinformation spreads faster&lt;/a&gt; on the internet. It also promotes anti-intellectualism, antiscience movements, and &lt;a href=&quot;[https://en.wikipedia.org/wiki/Agnotology](https://en.wikipedia.org/wiki/Agnotology)&quot;&gt;agnotology&lt;/a&gt; (deliberate propagation of ignorance). In other words, if we want to solve pressing problems like climate change, we &lt;strong&gt;need&lt;/strong&gt; people to trust the science!&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/blog/images/post_front_images/roman_forum.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Nicole Reyes on Unsplash&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/blog/images/post_front_images/roman_forum.jpg&quot; alt=&quot;&quot; title=&quot;Roman Forum - Photo by Nicole Reyes on Unsplash&quot; /&gt;&lt;/p&gt;
 
 &lt;h1 id=&quot;product-description-&quot;&gt;Product Description 🏛&lt;/h1&gt;
 
@@ -50,6 +50,8 @@
 
 &lt;p&gt;This Information Flow is constructed of 4 parts and occur in the following order:&lt;/p&gt;
 
+&lt;p&gt;&lt;img src=&quot;/blog/images/post_front_images/expert_verification.png&quot; alt=&quot;&quot; title=&quot;Process of Verifying an Expert&quot; /&gt;&lt;/p&gt;
+
 &lt;ol&gt;
   &lt;li&gt;Expert registers on the f0rum, enters his field of expertise and university where he/she got the Ph.D. Input Verification, or rather a simple Public Key Encryption (PKE) is used in this flow as a way to verify that the person registering is exactly who he/she says he/she is.&lt;/li&gt;
   &lt;li&gt;After that, f0rum asks the university for potential expert’s proof of degree (usually a transcript with a degree including a name and a field of expertise). This Information Flow uses PKE too, so the university can verify f0rum as the inquirer.&lt;/li&gt;
@@ -58,8 +60,6 @@
 &lt;/ol&gt;
 
 &lt;p&gt;Since all information goes through f0rum, a unilateral style of governance is employed here.&lt;/p&gt;
-
-&lt;p&gt;Illustration of this Information Flow can be viewed &lt;a href=&quot;https://drive.google.com/file/d/19hCMjJDVc1qRpQa-yQyDCbEgO6iRxzXV/view?usp=sharing&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;verification-of-articles-&quot;&gt;Verification of Articles 📰✅&lt;/h3&gt;
 
