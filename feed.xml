@@ -1,4 +1,103 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://stopwolf.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stopwolf.github.io/blog/" rel="alternate" type="text/html" /><updated>2021-02-23T04:37:57-06:00</updated><id>https://stopwolf.github.io/blog/feed.xml</id><title type="html">Stopwolf’s Blog</title><subtitle>Platform I use to share things I learned. Mostly Machine Learning, Data Science etc.</subtitle><entry><title type="html">Our Privacy Opportunity: Notes</title><link href="https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes.html" rel="alternate" type="text/html" title="Our Privacy Opportunity: Notes" /><published>2021-02-22T00:00:00-06:00</published><updated>2021-02-22T00:00:00-06:00</updated><id>https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes</id><content type="html" xml:base="https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes.html">&lt;p&gt;Our Privacy Opportunity is the first course in the &lt;a href=&quot;courses.openmined.org&quot;&gt;Private AI course series&lt;/a&gt; by OpenMined. It’s also a non-technical course so anyone can just jump in and learn new things. These notes are a short compilation of important concepts presented throughout the course. Nonetheless, I recommend you go through the entire course yourself since it’s filled with rich examples.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.0.0">Jekyll</generator><link href="https://stopwolf.github.io/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="https://stopwolf.github.io/blog/" rel="alternate" type="text/html" /><updated>2021-02-23T04:55:03-06:00</updated><id>https://stopwolf.github.io/blog/feed.xml</id><title type="html">Stopwolf’s Blog</title><subtitle>Platform I use to share things I learned. Mostly Machine Learning, Data Science etc.</subtitle><entry><title type="html">f0rum: Community-driven Article Validation</title><link href="https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum.html" rel="alternate" type="text/html" title="f0rum: Community-driven Article Validation" /><published>2021-02-23T00:00:00-06:00</published><updated>2021-02-23T00:00:00-06:00</updated><id>https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum</id><content type="html" xml:base="https://stopwolf.github.io/blog/privacy/openmined/project/2021/02/23/f0rum.html">&lt;h1 id=&quot;problem-statement-&quot;&gt;Problem Statement 📝&lt;/h1&gt;
+
+&lt;p&gt;As the usage of the internet grows, so does the opportunity to share and access new information. This can be beneficial in many ways: you can learn new topics from experts, learn about happenings from around the whole world, how to solve problems that you thought were specific to your use case. Internet became a vast trove of all kinds of human knowledge and experiences.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, along with the growth of internet usage, also grows the opportunity to share &lt;em&gt;false&lt;/em&gt; information, and to a potentially massive audience. If left unchecked, these flows of misinformation can damage individuals, but also the &lt;a href=&quot;[https://guides.lib.umich.edu/c.php?g=637508&amp;amp;p=4472297](https://guides.lib.umich.edu/c.php?g=637508&amp;amp;p=4472297)&quot;&gt;whole society&lt;/a&gt;. It’s known that &lt;a href=&quot;[https://science.sciencemag.org/CONTENT/359/6380/1146.abstract](https://science.sciencemag.org/CONTENT/359/6380/1146.abstract)&quot;&gt;misinformation spreads faster&lt;/a&gt; on the internet. It also promotes anti-intellectualism, antiscience movements, and &lt;a href=&quot;[https://en.wikipedia.org/wiki/Agnotology](https://en.wikipedia.org/wiki/Agnotology)&quot;&gt;agnotology&lt;/a&gt; (deliberate propagation of ignorance). In other words, if we want to solve pressing problems like climate change, we &lt;strong&gt;need&lt;/strong&gt; people to trust the science!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/blog/images/post_front_images/roman_forum.jpg&quot; alt=&quot;&quot; title=&quot;Photo by Nicole Reyes on Unsplash&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;product-description-&quot;&gt;Product Description 🏛&lt;/h1&gt;
+
+&lt;p&gt;Forums in Ancient Rome served the purpose of publicly sharing important information, educational events, and even elections among other things. Thus, they were a place where common people could gather, have fun, but also to learn reliable information. f0rum got its name by combining the ancient meaning of forums and modern technology (or rather binary numbers with “o”→ “0”)!&lt;/p&gt;
+
+&lt;p&gt;f0rum is an app for detecting untrue and fake articles by utilizing a community of experts, while also providing results of their voting to regular readers. The reason for employing experts instead of regular people is that the f0rum is meant to be used on articles that are scientific in their nature. Think about those articles about COVID-19 vaccines for example. It’d certainly be much easier if we knew which ones to trust.&lt;/p&gt;
+
+&lt;p&gt;The main goal of f0rum is to incentivize publishing valid, true scientific stories, but also provide an environment where readers become more educated, more (correctly) informed, and make better decisions in the long run.&lt;/p&gt;
+
+&lt;p&gt;This defines a clear value for the readers, but what about the experts? Experts tend to read pieces that interest them - which can more often than not, fall into their category of expertise. When that happens, they can vote on it. When that doesn’t happen, they can see other experts’ votings. In a sense, this creates a duality of roles for all experts - they are both the experts &lt;em&gt;and&lt;/em&gt; regular readers.&lt;/p&gt;
+
+&lt;h1 id=&quot;existing-solutions-&quot;&gt;Existing Solutions 🚔🐦&lt;/h1&gt;
+
+&lt;p&gt;Two existing solutions that combat misinformation are Taiwan’s &lt;a href=&quot;http://pol.is&quot;&gt;pol.is&lt;/a&gt; platform and Twitter’s Birdwatch project.&lt;/p&gt;
+
+&lt;p&gt;🐦 &lt;a href=&quot;[https://blog.twitter.com/en_us/topics/product/2021/introducing-birdwatch-a-community-based-approach-to-misinformation.html](https://blog.twitter.com/en_us/topics/product/2021/introducing-birdwatch-a-community-based-approach-to-misinformation.html)&quot;&gt;Birdwatch&lt;/a&gt; is Twitter’s community-driven approach to misinformation. People can post notes on a tweet and after a consensus is reached, other people can view those notes. f0rum differs from Birdwatch in three main ways:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;f0rum utilizes only experts to achieve more accurate results, while Birdwatch utilizes all people using Twitter&lt;/li&gt;
+  &lt;li&gt;f0rum keeps experts’ data private when it comes to voting, while Birdwatch freely shows notes and people that posted them&lt;/li&gt;
+  &lt;li&gt;f0rum works primarily for scientific articles, while Birdwatch’s main focus lies in political articles (because of Twitter’s nature)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;🚔 &lt;a href=&quot;http://pol.is&quot;&gt;Pol.is&lt;/a&gt; is Taiwan’s platform for analyzing and understanding what large groups of people &lt;em&gt;think&lt;/em&gt;. Thus it’s mainly used to reach political consensus, create better regulations, but also to detect misinformation. Aside from this, Taiwan created an anti-misinformation environment. They did it by having classes about detecting misinformation as part of public education, but also by requiring state agencies to correct false claims. Even though Taiwan created such an environment offline, the main difference between f0rum and &lt;a href=&quot;http://pol.is&quot;&gt;pol.is&lt;/a&gt; is not only exclusive employment of experts but also the voting system for articles which pol.is doesn’t have. If you’re interested in Taiwan’s amazing tech solutions, here’s an intriguing read:&lt;/p&gt;
+
+&lt;div class=&quot;jekyll-twitter-plugin&quot;&gt;&lt;blockquote class=&quot;twitter-tweet&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;1/In the midst of 195+ strategies for COVID-19, Taiwan has captured headlines for its speedy, effective response (&amp;lt;1K cases to date)&lt;br /&gt; &lt;br /&gt;But this barely scratches the surface of Taiwan&amp;#39;s collective, democratic innovations. I discuss these in my latest piece: &lt;a href=&quot;https://t.co/gitWJ26xb9&quot;&gt;https://t.co/gitWJ26xb9&lt;/a&gt; &lt;a href=&quot;https://t.co/GkAlIke46t&quot;&gt;pic.twitter.com/GkAlIke46t&lt;/a&gt;&lt;/p&gt;&amp;mdash; Divya Siddarth (@divyasiddarth) &lt;a href=&quot;https://twitter.com/divyasiddarth/status/1353117926543527943?ref_src=twsrc%5Etfw&quot;&gt;January 23, 2021&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;https://platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+&lt;/div&gt;
+
+&lt;h1 id=&quot;possible-use-cases-&quot;&gt;Possible Use Cases 👨‍💻&lt;/h1&gt;
+
+&lt;p&gt;Two main use cases f0rum provides include verification of experts and verification of articles by voting.&lt;/p&gt;
+
+&lt;p&gt;Verification of experts proves very hard without testing the knowledge of every person. This would be a very slow, cumbersome, and expensive process. Instead, f0rum requires that experts have a Ph.D. in their field of expertise to be able to vote on the articles of the same field.&lt;/p&gt;
+
+&lt;p&gt;The second use case happens after an expert reads an article of his expertise and now has the ability to vote on if the article is valid or not. After a considerable amount of votes have been placed, the article will be shown to regular readers along with the consensus experts reached.&lt;/p&gt;
+
+&lt;p&gt;But how do these use cases actually work? And where does privacy-enhancing technology come in place? Let’s have a look!&lt;/p&gt;
+
+&lt;h1 id=&quot;structured-transparency-aspect-&quot;&gt;Structured Transparency Aspect 💥&lt;/h1&gt;
+
+&lt;h3 id=&quot;verification-of-experts-&quot;&gt;Verification of Experts 👩‍🔬✅&lt;/h3&gt;
+
+&lt;p&gt;This Information Flow is constructed of 4 parts and occur in the following order:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Expert registers on the f0rum, enters his field of expertise and university where he/she got the Ph.D. Input Verification, or rather a simple Public Key Encryption (PKE) is used in this flow as a way to verify that the person registering is exactly who he/she says he/she is.&lt;/li&gt;
+  &lt;li&gt;After that, f0rum asks the university for potential expert’s proof of degree (usually a transcript with a degree including a name and a field of expertise). This Information Flow uses PKE too, so the university can verify f0rum as the inquirer.&lt;/li&gt;
+  &lt;li&gt;University sends back the proof of degree to f0rum by using both Public Key Encryption and Hashing. PKE is used so that f0rum can verify the right university sent the proof, while also hashing the proof so f0rum can know if it was tempered with.&lt;/li&gt;
+  &lt;li&gt;Finally, potential expert becomes a verified one, and can vote on available articles.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Since all information goes through f0rum, a unilateral style of governance is employed here.&lt;/p&gt;
+
+&lt;p&gt;Illustration of this Information Flow can be viewed &lt;a href=&quot;https://drive.google.com/file/d/19hCMjJDVc1qRpQa-yQyDCbEgO6iRxzXV/view?usp=sharing&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;verification-of-articles-&quot;&gt;Verification of Articles 📰✅&lt;/h3&gt;
+
+&lt;p&gt;This Information Flow and use case is the main one of f0rum. It’s meant to educate readers on which articles should or shouldn’t be trusted. Because this Information Flow is the most important one, it uses all aspects of Structured Transparency, and in the following way:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Input Privacy&lt;/strong&gt;: by using Public Key Encryption, Input Privacy can be easily achieved. An expert “signs” his vote with his private key, and then encrypts the vote with f0rum’s public key. Thus, each expert can vote on the validity of an article without worrying about others finding out what he voted for. On the other side, f0rum can decrypt the vote by using its private key and then verify which expert voted by using the expert’s public key.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Output Privacy&lt;/strong&gt;: since the voting result is an aggregate statistic (sum of all votes on all sides), Differential Privacy is just the right tool to reveal final results without also revealing individual votings.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Input Verification&lt;/strong&gt;: as mentioned previously, when an expert uses his private key to “sign” a vote, f0rum can use that to verify that the vote was sent from a trusted source (verified expert).&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Output Verification&lt;/strong&gt;: used to verify the outcome of the voting. For example, that every expert that voted, voted only once, and that only verified experts voted.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Flow Governance&lt;/strong&gt;: since all information here flows between experts and f0rum, f0rum should be the actor that defines the Information Flow. But, experts are the ones with data! It’s a better practice to let them hold their data (instead of f0rum) so they decide for themselves what happens with their data afterward.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;possible-pitfalls-&quot;&gt;Possible Pitfalls 📉❔&lt;/h1&gt;
+
+&lt;p&gt;Of course, f0rum isn’t perfect, far from it. Verification of experts, the scale of f0rum, and treating biased experts are just some of the possible problems. We’ll go through each of them here.&lt;/p&gt;
+
+&lt;h3 id=&quot;verification-of-experts--1&quot;&gt;Verification of Experts 👨‍🔬&lt;/h3&gt;
+
+&lt;p&gt;As mentioned previously, verification of experts is done via his/her university. This isn’t a fast solution, but a working one since only the university can provide proof of degree. Unfortunately, only experts with formal degrees like Ph.D. and MD degrees will be verified. And not all people with Ph.D. degrees are experts, and not all experts have a doctoral degree! For now, this is the only way to actually verify expertise without massively testing millions of potential experts which introduces new problems like cheating.&lt;/p&gt;
+
+&lt;h3 id=&quot;scale-of-f0rum-&quot;&gt;Scale of f0rum 🌍&lt;/h3&gt;
+
+&lt;p&gt;Two problems tied to f0rum being on a nation-wide scale are &lt;strong&gt;lack of diverse experts&lt;/strong&gt; in smaller countries and possibly having &lt;strong&gt;media curators as “experts”&lt;/strong&gt; in communist countries. Both of these problems could be easily solved if f0rum was on a global-wide scale.&lt;/p&gt;
+
+&lt;p&gt;On the other hand, if f0rum was actually on a global-wide scale, verification of experts the same way as previously mentioned wouldn’t scale well. We’d have one central body (f0rum) collaborating with possibly all universities in the world on one task.&lt;/p&gt;
+
+&lt;h3 id=&quot;treating-biased-experts-&quot;&gt;Treating Biased Experts 🤥&lt;/h3&gt;
+
+&lt;p&gt;Biased experts are expected to show up on f0rum. For example, they’d use the app to “validate” articles by how their employers or even governments tell them to. Sadly, this is a huge problem in today’s society. It can affect the population’s trust in media, government, and even science as a result.&lt;/p&gt;
+
+&lt;p&gt;Since f0rum is a community-driven app, the problem of biased experts can be solved easily. The idea is based on &lt;em&gt;the&lt;/em&gt; &lt;em&gt;law of big numbers.&lt;/em&gt; It states that “as a sample size grows, its mean gets closer to the average of the whole population”. Thus, the bigger the community of experts, the more neutralized biased experts become!&lt;/p&gt;
+
+&lt;h1 id=&quot;conclusion-&quot;&gt;Conclusion 💪&lt;/h1&gt;
+
+&lt;p&gt;If we, as a society, want to move forward, to solve important problems, we’ll first need people to believe in science. Currently, the free flow of misinformation presents the main obstacle in achieving that.&lt;/p&gt;
+
+&lt;p&gt;f0rum was thought of as one possible solution. A solution that uses experts’ free time and knowledge to better educate a potentially huge number of people. And maybe, by doing so, we’ll achieve our goal, trust science and solve our most pressing problems, before it’s too late.&lt;/p&gt;</content><author><name></name></author><summary type="html">Problem Statement 📝</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://stopwolf.github.io/blog/images/post_front_images/roman_forum.jpg" /><media:content medium="image" url="https://stopwolf.github.io/blog/images/post_front_images/roman_forum.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Our Privacy Opportunity: Notes</title><link href="https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes.html" rel="alternate" type="text/html" title="Our Privacy Opportunity: Notes" /><published>2021-02-22T00:00:00-06:00</published><updated>2021-02-22T00:00:00-06:00</updated><id>https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes</id><content type="html" xml:base="https://stopwolf.github.io/blog/privacy/openmined/notes/2021/02/22/opo-course-notes.html">&lt;p&gt;Our Privacy Opportunity is the first course in the &lt;a href=&quot;courses.openmined.org&quot;&gt;Private AI course series&lt;/a&gt; by OpenMined. It’s also a non-technical course so anyone can just jump in and learn new things. These notes are a short compilation of important concepts presented throughout the course. Nonetheless, I recommend you go through the entire course yourself since it’s filled with rich examples.&lt;/p&gt;
 
 &lt;blockquote&gt;
   &lt;p&gt;Note: If you want to read much more detailed notes, other members of the community Nahua Kang (&lt;a href=&quot;nahua.dev&quot;&gt;his blog&lt;/a&gt;) and Johannes Stutz (&lt;a href=&quot;deeplearning.berlin&quot;&gt;his blog&lt;/a&gt;) did the course justice with their notes.&lt;/p&gt;
